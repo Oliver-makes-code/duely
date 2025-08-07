@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"Accessor_CommandSourceStack",
+		"Mixin_Player",
 		"Mixin_ServerPlayer"
 	],
 	"injectors": {
