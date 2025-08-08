@@ -24,6 +24,6 @@ public class Mixin_Player {
         if (PlayerConfigAttachment.get(self).shouldAcceptPvp && PlayerConfigAttachment.get(other).shouldAcceptPvp)
             return original.call(self, entity);
 
-        return false;
+        return true;
     }
 }
