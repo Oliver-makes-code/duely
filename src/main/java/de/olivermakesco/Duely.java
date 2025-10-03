@@ -13,11 +13,14 @@ public class Duely implements ModInitializer {
     public static final String MODID = "duely";
 
     @SuppressWarnings("UnstableApiUsage")
-    public static final AttachmentType<PlayerConfigAttachment> PLAYER_CONFIG_TYPE = AttachmentRegistry.<PlayerConfigAttachment>builder()
-            .persistent(PlayerConfigAttachment.CODEC)
-            .initializer(PlayerConfigAttachment::new)
-            .copyOnDeath()
-            .buildAndRegister(rl("player_config"));
+    public static final AttachmentType<PlayerConfigAttachment> PLAYER_CONFIG_TYPE = AttachmentRegistry.
+            create(
+                    rl("player_config"),
+                    builder -> builder
+                            .persistent(PlayerConfigAttachment.CODEC)
+                            .copyOnDeath()
+                            .initializer(PlayerConfigAttachment::new)
+            );
 
     @Override
     public void onInitialize() {
